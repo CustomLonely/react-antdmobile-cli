@@ -1,0 +1,84 @@
+
+@import './Basic';
+
+@chatImgStyle: 50 * @hd;
+@personImgWidth: 36 * @hd;
+/* fonts */
+@font: '12', '14';
+@fontFamily: 'Microsoft YaHei';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.bgColor_base {
+  background: extract(@blueColor, 2);
+}
+.bgColor_blue5 {
+  background: extract(@blueColor, 5);
+}
+.am-switch {
+  .checkbox {
+    background: extract(@whiteColor, 2);
+  }
+}
+.bgColor_white {
+  background: extract(@whiteColor, 1);
+}
+
+//3行溢出
+
+.ellipsis-mult(@n: 3) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @n;
+  word-break: break-all;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+//单行溢出隐藏
+
+.ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container {
+  // background-color: @base;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: extract(@whiteColor, 3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.center_x {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.padding_h12 {
+  padding: 0 12 * @hd;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
